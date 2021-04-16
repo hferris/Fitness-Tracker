@@ -18,5 +18,5 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/custommethods", { useNewUrlParser: true });
 
 app.listen(PORT, () => {
-  console.log(`App listening on http://localhost:${PORT}!`);
+  console.log(`App listening on http://localhost:${PORT}`);
 });

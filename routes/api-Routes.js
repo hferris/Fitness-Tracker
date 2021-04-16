@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Workout } = require("../models");
 
+//api/workouts
 router.get("/api/workouts", async (req, res) => {
   try {
     const info = await Workout.find();
@@ -10,6 +11,7 @@ router.get("/api/workouts", async (req, res) => {
   }
 });
 
+//api/workouts by id
 router.put("/api/workouts/:id", async (req, res) => {
   try {
     const info = await Workout.updateById(
@@ -22,6 +24,7 @@ router.put("/api/workouts/:id", async (req, res) => {
   }
 });
 
+//api/workouts
 router.post("/api/workouts", async (req, res) => {
   Workout.create(req.body)
     .then((info) => {
@@ -32,6 +35,7 @@ router.post("/api/workouts", async (req, res) => {
     });
 });
 
+//api/workouts by range
 router.get("/api/workouts/range", async (req, res) => {
   try {
     const info = await Workout.find();
