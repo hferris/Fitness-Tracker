@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Workout } = require("../models");
 
-//api/workouts
+//api/workouts, last exercises
 router.get("/api/workouts", async (req, res) => {
   try {
     const info = await Workout.find();
@@ -11,7 +11,7 @@ router.get("/api/workouts", async (req, res) => {
   }
 });
 
-//api/workouts by id
+//api/workouts by id, adding exercises to the list of workouts
 router.put("/api/workouts/:id", async (req, res) => {
   try {
     const info = await Workout.updateMany(
@@ -24,7 +24,7 @@ router.put("/api/workouts/:id", async (req, res) => {
   }
 });
 
-//api/workouts
+//api/workouts, adds new exercises to database
 router.post("/api/workouts", async (req, res) => {
   Workout.create(req.body)
     .then((info) => {
