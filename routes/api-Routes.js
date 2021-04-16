@@ -14,7 +14,7 @@ router.get("/api/workouts", async (req, res) => {
 //api/workouts by id
 router.put("/api/workouts/:id", async (req, res) => {
   try {
-    const info = await Workout.updateById(
+    const info = await Workout.updateMany(
       { _id: req.params.id },
       { $push: { exercises: req.body } }
     );
